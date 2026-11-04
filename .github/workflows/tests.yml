@@ -1,0 +1,20 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  quick-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run quick tests
+        working-directory: src
+        run: |
+          python exhaustive_tests.py quick
+          python maintain_tests.py quick
+          python hypergraph_check.py
+          python hardness_check2.py
+          python tutorial_example.py
