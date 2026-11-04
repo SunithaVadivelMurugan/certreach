@@ -1,0 +1,23 @@
+
+Part A: LLM-written implementations (30000 random instances)
+solver                            ok  wrong_caught      cert_bug         crash  wrong_missed   exposed %
+V1 per-packet BFS              30000             0             0             0             0         0.0
+V2 union graph                 27607          1086          1307             0             0         8.0
+V3 shared visited              28737           500           763             0             0         4.2
+V4 Floyd-Warshall              30000             0             0             0             0         0.0
+
+Part B: injected bugs in V1 (30000 random instances)
+solver                            ok  wrong_caught      cert_bug         crash  wrong_missed   exposed %
+V1 (unmutated)                 30000             0             0             0             0         0.0
+mut:undirected                 17534          4840          7626             0             0        41.6
+mut:path_not_reversed           7286             0         22714             0             0        75.7
+mut:union_label                20229          1077          8694             0             0        32.6
+mut:skip_last_packet           14544          8170          7286             0             0        51.5
+mut:cut_without_source         22714             0          7286             0             0        24.3
+mut:complement_of_target         26346             0          3654             0             0        12.2
+mut:only_first_cut             26719             0          3281             0             0        10.9
+mut:off_by_one_path             7286             0         22714             0             0        75.7
+mut:wrong_packet               24918             0          5082             0             0        16.9
+mut:ignore_P_filter            21085          3504          5411             0             0        29.7
+
+Timing (n=25, 8 packets, 60 graphs): mean solve 0.40 ms; mean check 0.002 ms (positive, 58 cases), 0.204 ms (negative, 2 cases)

@@ -1,0 +1,86 @@
+Exhaustive n=3, 2 packets: 4096 labelled graphs, all queries.
+
+=== exhaustive n=3, k=2
+  T1_cut_accepted: 8704
+  T1_pos_accepted: 12288
+  T2_neg_complete: 3648
+  T2_pos_complete: 8640
+  T3_needs_multiple_cuts: 128
+  T3_negP_queries: 576
+  T4_mincuts_lt_P: 448
+  T4_mincuts_lt_atoms: 424
+
+Exhaustive n=3, 3 packets: 262144 labelled graphs, all queries.
+
+=== exhaustive n=3, k=3
+  T1_cut_accepted: 1777664
+  T1_pos_accepted: 2359296
+  T2_neg_complete: 419328
+  T2_pos_complete: 1415680
+  T3_needs_multiple_cuts: 30720
+  T3_negP_queries: 124416
+  T4_mincuts_lt_P: 99840
+  T4_mincuts_lt_atoms: 94824
+
+Random n=4, 3 packets, density 0.35: 20000 graphs, all queries.
+
+=== random n=4, k=3
+  T1_cut_accepted: 244621
+  T1_pos_accepted: 163172
+  T2_neg_complete: 44611
+  T2_pos_complete: 95389
+  T3_needs_multiple_cuts: 5463
+  T3_negP_queries: 15936
+  T4_mincuts_lt_P: 11661
+  T4_mincuts_lt_atoms: 11621
+  (|P|, atoms, min cuts) -> count   [unreachable queries only]
+    (2, 1, 1): 37
+    (2, 2, 1): 9506
+    (2, 2, 2): 4188
+    (3, 2, 1): 12
+    (3, 2, 2): 3
+    (3, 3, 1): 918
+    (3, 3, 2): 1185
+    (3, 3, 3): 87
+
+Random n=5, 4 packets, density 0.3: 4000 graphs, all queries.
+
+=== random n=5, k=4
+  T1_cut_accepted: 172231
+  T1_pos_accepted: 100240
+  T2_neg_complete: 14742
+  T2_pos_complete: 45258
+  T3_needs_multiple_cuts: 3465
+  T3_negP_queries: 7206
+  T4_mincuts_lt_P: 4960
+  T4_mincuts_lt_atoms: 4959
+  (|P|, atoms, min cuts) -> count   [unreachable queries only]
+    (2, 1, 1): 1
+    (2, 2, 1): 3220
+    (2, 2, 2): 2114
+    (3, 2, 1): 2
+    (3, 3, 1): 496
+    (3, 3, 2): 1043
+    (3, 3, 3): 132
+    (4, 3, 2): 1
+    (4, 4, 1): 22
+    (4, 4, 2): 131
+    (4, 4, 3): 44
+
+Incremental recheck n=4, k=3: 200000 edit batches, local recheck == full recheck in every trial.
+    ('neg', 'invalidated'): 13598
+    ('neg', 'still_valid'): 65596
+    ('pos', 'invalidated'): 9257
+    ('pos', 'still_valid'): 111549
+
+Incremental recheck n=6, k=4: 60000 edit batches, local recheck == full recheck in every trial.
+    ('neg', 'invalidated'): 1142
+    ('neg', 'still_valid'): 10352
+    ('pos', 'invalidated'): 1279
+    ('pos', 'still_valid'): 47227
+
+All assertions passed.
+Prop 3 + downward closure: exhaustive n=3, k=3 (262144 graphs): OK
+Prop 3 + downward closure: random n=4, k=3 (20000 graphs): OK
+Prop 3 + downward closure: random n=5, k=4 (4000 graphs): OK
+hypergraph-coloring equivalence (single-label case): 3346 unreachable instances checked, 0 mismatches

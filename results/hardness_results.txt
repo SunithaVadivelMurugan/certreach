@@ -1,0 +1,8 @@
+# Output of hardness_check.py and hardness_check2.py (consistency checks of the reduction, not proofs)
+# $ python hardness_check.py
+reduction check: 3000 random 3-uniform hypergraphs; m*(P) equals the chromatic number in all; 3000 are 2-colorable, 0 need 3 or more colors.
+
+# $ python hardness_check2.py
+reduction check: 3000 random 3-uniform hypergraphs; m*(P) equals the chromatic number in all; 3000 are 2-colorable, 0 need 3 or more colors.
+Fano plane (not 2-colorable): m*(P) = 3, chromatic number = 3
+dense random hypergraphs, m*(P) == chromatic number in all; counts by value: {2: 137, 3: 161, 4: 2}

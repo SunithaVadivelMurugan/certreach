@@ -1,0 +1,8 @@
+T6 correctness: 1521022 (stream step, group) checks passed.
+
+T7 cost (random insertion streams, 16 packets in 8 groups of 2):
+  n=500: 5000 insertions, 4960 edges, 1/8 groups reached t; maintained ops 43,436 (= 0.52 x m(n+M+I)); 68 searches; estimated rebuild-each-time ops 2,171,200 (~50x more)
+  n=2000: 20000 insertions, 19947 edges, 2/8 groups reached t; maintained ops 183,754 (= 0.55 x m(n+M+I)); 183 searches; estimated rebuild-each-time ops 26,855,000 (~146x more)
+  n=5000: 50000 insertions, 49950 edges, 4/8 groups reached t; maintained ops 467,444 (= 0.56 x m(n+M+I)); 291 searches; estimated rebuild-each-time ops 121,014,000 (~259x more)
+
+All assertions passed.
